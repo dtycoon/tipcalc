@@ -45,6 +45,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
+                                    <action selector="OnEditBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="y4B-Wa-G08"/>
                                     <action selector="onEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="QcX-G0-Iee"/>
                                 </connections>
                             </textField>

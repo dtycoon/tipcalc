@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     var tipPercentages: [Double] = [0, 0, 0]
     var background:[UIColor]  = [UIColor.whiteColor(), UIColor.lightGrayColor()]
+    var refDate = NSDate().dateByAddingTimeInterval(10)
     
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var billField: UITextField!
@@ -21,6 +22,7 @@ class ViewController: UIViewController {
         tipLabel.text="$0.00"
         totalLabel.text="$0.00"
         loadBackground()
+        println("viewDidLoad")
         
         
     }
@@ -37,13 +39,14 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onEditingChanged(sender: AnyObject) {
-
-        loadTotal()
+         loadTimeDifference()
+         loadTotal()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         println("view will appear")
+        loadTimeDifference()
         loadBackground()
         loadTipControl()
         loadTotal()
@@ -78,6 +81,9 @@ class ViewController: UIViewController {
 
     }
     
+    @IBAction func OnEditBegin(sender: AnyObject) {
+        loadTimeDifference()
+    }
     func loadBackground()
     {
         var defaults = NSUserDefaults.standardUserDefaults()
@@ -85,6 +91,18 @@ class ViewController: UIViewController {
         
         self.view.backgroundColor = background[color]
         
+    }
+    
+    func loadTimeDifference()
+    {
+    
+        var newDate = NSDate()
+        if( newDate.timeIntervalSinceDate(refDate) > 0)
+        {
+            billField.text="0"
+            println("making bill 0")
+        }
+        refDate = newDate.dateByAddingTimeInterval(120)
     }
 
     override func viewDidAppear(animated: Bool) {
