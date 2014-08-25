@@ -45,6 +45,9 @@ class UserViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func onTapBack(sender: UIButton) {
+    dismissViewControllerAnimated(true, completion: nil)
+    }
 
     @IBAction func onTap(sender: AnyObject) {
          view.endEditing(true)

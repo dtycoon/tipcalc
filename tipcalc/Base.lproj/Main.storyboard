@@ -186,7 +186,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="9CO-te-Q99" kind="modal" modalTransitionStyle="flipHorizontal" id="TtG-25-Wdh"/>
+                                    <action selector="onTapBack:" destination="pZC-T0-P14" eventType="touchDown" id="kZB-rA-p7J"/>
                                 </connections>
                             </button>
                         </barButtonItem>
