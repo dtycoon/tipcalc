@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     
     var tipPercentages: [Double] = [0, 0, 0]
+    var background:[UIColor]  = [UIColor.whiteColor(), UIColor.lightGrayColor()]
+    
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var billField: UITextField!
     override func viewDidLoad() {
@@ -18,6 +20,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         tipLabel.text="$0.00"
         totalLabel.text="$0.00"
+        loadBackground()
         
         
     }
@@ -41,6 +44,7 @@ class ViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         println("view will appear")
+        loadBackground()
         loadTipControl()
         loadTotal()
 
@@ -73,6 +77,16 @@ class ViewController: UIViewController {
         totalLabel.text = String(format: "$%.2f", total)
 
     }
+    
+    func loadBackground()
+    {
+        var defaults = NSUserDefaults.standardUserDefaults()
+        var color = defaults.integerForKey("background_persist")
+        
+        self.view.backgroundColor = background[color]
+        
+    }
+
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         println("view did appear")

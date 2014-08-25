@@ -169,6 +169,24 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Background" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a9a-5h-Yff">
+                                <rect key="frame" x="27" y="300" width="94" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="nqV-2D-GMa">
+                                <rect key="frame" x="27" y="343" width="227" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="White"/>
+                                    <segment title="Grey"/>
+                                </segments>
+                                <connections>
+                                    <action selector="onEditingChanged:" destination="pZC-T0-P14" eventType="valueChanged" id="OzA-KX-n9S"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -192,6 +210,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="colorControl" destination="nqV-2D-GMa" id="Q34-40-fAX"/>
                         <outlet property="tipField1" destination="btV-EI-P7h" id="67E-lw-Ka8"/>
                         <outlet property="tipField2" destination="Ik5-ha-pN6" id="GzM-75-f0j"/>
                         <outlet property="tipField3" destination="ZvC-0N-AQf" id="4vH-36-CtD"/>

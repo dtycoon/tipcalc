@@ -10,11 +10,19 @@ import UIKit
 
 class UserViewController: UIViewController {
 
+    var background:[UIColor]  = [UIColor.whiteColor(), UIColor.lightGrayColor() ]
+   
+    @IBOutlet weak var tableChoice: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         var defaults = NSUserDefaults.standardUserDefaults()
-        
+        var color = defaults.integerForKey("background_persist")
+       
+        self.view.backgroundColor = background[color]
+        colorControl.selectedSegmentIndex = color
         var tip1 = defaults.integerForKey("tip_percertage_1")
         tipField1.text = "\(tip1)"
            var tip2 = defaults.integerForKey("tip_percertage_2")
@@ -32,6 +40,8 @@ class UserViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBOutlet weak var colorControl: UISegmentedControl!
     @IBOutlet weak var tipField3: UITextField!
     @IBOutlet weak var tipField2: UITextField!
 
@@ -54,6 +64,10 @@ class UserViewController: UIViewController {
     }
     @IBAction func onEditingChanged(sender: AnyObject) {
         var defaults = NSUserDefaults.standardUserDefaults()
+        var colorPicked = colorControl.selectedSegmentIndex
+        defaults.setInteger(colorPicked, forKey: "background_persist")
+         self.view.backgroundColor = background[colorPicked]
+        
     var tip1:Int? = tipField1.text.toInt()
         if (tip1 == nil)
         {
