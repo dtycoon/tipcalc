@@ -102,7 +102,7 @@ class ViewController: UIViewController {
             billField.text="0"
             println("making bill 0")
         }
-        refDate = newDate.dateByAddingTimeInterval(120)
+        refDate = newDate.dateByAddingTimeInterval(600)
     }
 
     override func viewDidAppear(animated: Bool) {
