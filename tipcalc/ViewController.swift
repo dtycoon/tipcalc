@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         
         var tip3 = defaults.integerForKey("tip_percertage_3")
         tipPercentages[2] = (tip3 as NSNumber).doubleValue / 100
-       tipControl.setTitle("\(tip2)%", forSegmentAtIndex: 2)
+       tipControl.setTitle("\(tip3)%", forSegmentAtIndex: 2)
 
     }
     @IBOutlet weak var tipLabel: UILabel!
