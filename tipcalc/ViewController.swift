@@ -83,6 +83,7 @@ class ViewController: UIViewController {
     
     @IBAction func OnEditBegin(sender: AnyObject) {
         loadTimeDifference()
+        loadTotal()
     }
     func loadBackground()
     {
@@ -99,8 +100,8 @@ class ViewController: UIViewController {
         var newDate = NSDate()
         if( newDate.timeIntervalSinceDate(refDate) > 0)
         {
-            billField.text="0"
-            println("making bill 0")
+            billField.text = ""
+            println("making bill blank")
         }
         refDate = newDate.dateByAddingTimeInterval(600)
     }
